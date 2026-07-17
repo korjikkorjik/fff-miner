@@ -11,6 +11,9 @@ passthrough to an RTX 4090, not on an actual HiveOS rig):
   - The "Установочный URL" field of HiveOS's own Custom-miner dialog
     correctly picked up CUSTOM_URL from h-manifest.conf (confirmed from a
     screenshot) -- the package download step itself works.
+  - "Кошелек и воркер шаблона: %WAL%.%WORKER_NAME%" is confirmed correct --
+    cross-checked against a real working PCM-miner Custom config on the
+    same HiveOS rig, which uses the identical template for the same pool.
 
 WHAT'S NOT VERIFIED (no access to a real HiveOS rig to test against):
   - The exact env var names HiveOS exports for the other Custom-miner
@@ -36,12 +39,17 @@ HOW TO USE (HiveOS "Custom конфигурация" dialog)
                                    the flight sheet, no need to retype it
                                    here)
   Адрес пула:                     prl.kryptex.network:7048
-                                   (or de.pearl.herominers.com:1200)
-  Пароль:                         x
+                                   (regional alternatives also work, e.g.
+                                   prl-ru.kryptex.network:7048 -- same pool,
+                                   possibly lower latency; or
+                                   de.pearl.herominers.com:1200)
+  Пароль:                         x (or leave blank -- a real working
+                                   PCM-miner config on this pool leaves it
+                                   empty)
   Доп. параметры конфигурации:    array
-                                   (or object -- see the pool table in the
-                                   main README; this field selects
-                                   mining.authorize's param style)
+                                   (or object for HeroMiners -- see the pool
+                                   table in the main README; this field
+                                   selects mining.authorize's param style)
 
   HiveOS downloads and extracts the archive to /hive/miners/custom/fff on
   the rig automatically once you apply and start.
