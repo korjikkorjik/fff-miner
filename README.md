@@ -34,7 +34,7 @@ The console prints one summary line every few seconds — throughput (TH/s), acc
 Add a Custom miner in your flight sheet and paste this exact URL into the "Miner URL" field:
 
 ```
-https://github.com/korjikkorjik/fff-miner/releases/download/v1.0.7/fff-hiveos.tar.gz
+https://github.com/korjikkorjik/fff-miner/releases/download/v1.0.8/fff-hiveos.tar.gz
 ```
 
 HiveOS downloads and extracts it automatically. For wallet/worker/pool configuration and full details, see [`hiveos/README-hiveos.txt`](hiveos/README-hiveos.txt).
