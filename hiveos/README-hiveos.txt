@@ -9,7 +9,7 @@ ever needs re-diagnosing.
 
 HOW TO USE (HiveOS "Custom конфигурация" dialog)
   Имя майнера:                    fff
-  Установочный URL:               https://github.com/korjikkorjik/fff-miner/releases/download/v1.0.5/fff-hiveos.tar.gz
+  Установочный URL:               https://github.com/korjikkorjik/fff-miner/releases/download/v1.0.6/fff-hiveos.tar.gz
   Хэш алгоритм:                   pearlhash
   Кошелек и воркер шаблона:       %WAL%.%WORKER_NAME%
   Адрес пула:                     prl.kryptex.network:7048
@@ -41,7 +41,13 @@ HOW TO USE (HiveOS "Custom конфигурация" dialog)
   per-card hashrate breakdown to the HiveOS dashboard (the "hs" array, one
   entry per GPU in nvidia-smi order) -- this also fixed `miner`/screen -r
   showing nothing: fff's output used to go only to the log file, now it's
-  tee'd to the screen too, so live output is visible there again. Check
+  tee'd to the screen too, so live output is visible there again.
+
+  Log size is capped (v1.0.6): fff runs for weeks and prints a [stats]
+  line every few seconds per GPU, so h-run.sh checks every 5 minutes and
+  trims any of fff.log/fff-gpuN.log back to its last 5MB once it exceeds
+  20MB -- self-contained, doesn't depend on the rig's system logrotate/cron
+  actually being configured. Check
   fff.log for the combined feed, or fff-gpuN.log for one card's own output.
 
 REQUIREMENTS ON THE RIG
