@@ -31,7 +31,7 @@ WHAT'S NOT VERIFIED (no access to a real HiveOS rig to test against):
 
 HOW TO USE (HiveOS "Custom конфигурация" dialog)
   Имя майнера:                    fff
-  Установочный URL:               https://github.com/korjikkorjik/fff-miner/releases/download/v1.0.0/fff-hiveos.tar.gz
+  Установочный URL:               https://github.com/korjikkorjik/fff-miner/releases/download/v1.0.1/fff-hiveos.tar.gz
   Хэш алгоритм:                   pearlhash
   Кошелек и воркер шаблона:       %WAL%.%WORKER_NAME%
                                    (HiveOS substitutes %WAL% with whatever
