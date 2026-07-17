@@ -9,7 +9,7 @@ ever needs re-diagnosing.
 
 HOW TO USE (HiveOS "Custom конфигурация" dialog)
   Имя майнера:                    fff
-  Установочный URL:               https://github.com/korjikkorjik/fff-miner/releases/download/v1.0.6/fff-hiveos.tar.gz
+  Установочный URL:               https://github.com/korjikkorjik/fff-miner/releases/download/v1.0.7/fff-hiveos.tar.gz
   Хэш алгоритм:                   pearlhash
   Кошелек и воркер шаблона:       %WAL%.%WORKER_NAME%
   Адрес пула:                     prl.kryptex.network:7048
@@ -42,6 +42,18 @@ HOW TO USE (HiveOS "Custom конфигурация" dialog)
   entry per GPU in nvidia-smi order) -- this also fixed `miner`/screen -r
   showing nothing: fff's output used to go only to the log file, now it's
   tee'd to the screen too, so live output is visible there again.
+
+  Dashboard hashrate (v1.0.7): h-stats.sh is SOURCED by /hive/bin/agent's
+  miner_stats(), not executed as its own process -- confirmed by reading
+  /hive/bin/agent directly. It runs
+  `{ source h-manifest.conf; source h-config.sh; source h-stats.sh; } 1>&2`,
+  so anything h-stats.sh prints via echo is thrown away (redirected to
+  stderr) -- the agent instead reads the shell variables $khs (combined
+  hashrate) and $stats (JSON) that h-stats.sh is expected to SET as a side
+  effect of being sourced. Earlier versions printed a JSON blob via echo,
+  which was silently discarded -- this is why the dashboard never showed
+  anything, in single- or multi-GPU form, regardless of the per-card JSON
+  shape. Fixed: h-stats.sh now sets $khs/$stats directly, no stdout output.
 
   Log size is capped (v1.0.6): fff runs for weeks and prints a [stats]
   line every few seconds per GPU, so h-run.sh checks every 5 minutes and
