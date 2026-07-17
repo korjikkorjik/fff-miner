@@ -31,7 +31,13 @@ The console prints one summary line every few seconds — throughput (TH/s), acc
 
 ## HiveOS
 
-See [`hiveos/README-hiveos.txt`](hiveos/README-hiveos.txt) for setup and configuration.
+Add a Custom miner in your flight sheet and paste this exact URL into the "Miner URL" field:
+
+```
+https://raw.githubusercontent.com/korjikkorjik/fff-miner/main/hiveos/fff-hiveos.tar.gz
+```
+
+HiveOS downloads and extracts it automatically. For wallet/worker/pool configuration and full details, see [`hiveos/README-hiveos.txt`](hiveos/README-hiveos.txt).
 
 **Note:** the HiveOS wrapper scripts (flight-sheet integration, stats reporting) are best-effort against HiveOS's documented custom-miner conventions and have not been validated on a real rig. The underlying Linux binary itself is verified — it builds, self-tests correctly, and mines live against Kryptex. If the flight-sheet fields aren't picked up, edit `fff.conf` directly in the miner folder over SSH; that path doesn't depend on HiveOS's variable passing at all.
 
