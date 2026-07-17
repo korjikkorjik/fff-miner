@@ -30,8 +30,11 @@ HOW TO USE (HiveOS "Custom конфигурация" dialog)
   Имя майнера:                    fff
   Установочный URL:               https://raw.githubusercontent.com/korjikkorjik/fff-miner/main/hiveos/fff-hiveos.tar.gz
   Хэш алгоритм:                   pearlhash
-  Кошелек и воркер шаблона:       <your real prl1p... address>.%WORKER_NAME%
-                                   e.g. prl1pw37c...wt8.%WORKER_NAME%
+  Кошелек и воркер шаблона:       %WAL%.%WORKER_NAME%
+                                   (HiveOS substitutes %WAL% with whatever
+                                   wallet you already set for this coin in
+                                   the flight sheet, no need to retype it
+                                   here)
   Адрес пула:                     prl.kryptex.network:7048
                                    (or de.pearl.herominers.com:1200)
   Пароль:                         x
