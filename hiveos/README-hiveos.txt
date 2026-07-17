@@ -9,7 +9,7 @@ ever needs re-diagnosing.
 
 HOW TO USE (HiveOS "Custom конфигурация" dialog)
   Имя майнера:                    fff
-  Установочный URL:               https://github.com/korjikkorjik/fff-miner/releases/download/v1.0.4/fff-hiveos.tar.gz
+  Установочный URL:               https://github.com/korjikkorjik/fff-miner/releases/download/v1.0.5/fff-hiveos.tar.gz
   Хэш алгоритм:                   pearlhash
   Кошелек и воркер шаблона:       %WAL%.%WORKER_NAME%
   Адрес пула:                     prl.kryptex.network:7048
@@ -34,9 +34,15 @@ HOW TO USE (HiveOS "Custom конфигурация" dialog)
 
   Multiple GPUs are handled automatically: h-run.sh detects all GPUs via
   nvidia-smi and launches one fff process per GPU (CUDA_VISIBLE_DEVICES-
-  pinned), worker names suffixed -gpu0/-gpu1/etc. Check fff.log -- the
-  "[h-run] starting GPU N as worker ..." lines show exactly what got
-  resolved for each GPU.
+  pinned). All GPUs share the SAME worker name (no -gpuN suffix, fixed in
+  v1.0.5) so the pool shows one combined worker for the whole rig instead
+  of N separate ones. Per-card output still goes to its own log
+  (fff-gpu0.log, fff-gpu1.log, ...) so h-stats.sh can report a proper
+  per-card hashrate breakdown to the HiveOS dashboard (the "hs" array, one
+  entry per GPU in nvidia-smi order) -- this also fixed `miner`/screen -r
+  showing nothing: fff's output used to go only to the log file, now it's
+  tee'd to the screen too, so live output is visible there again. Check
+  fff.log for the combined feed, or fff-gpuN.log for one card's own output.
 
 REQUIREMENTS ON THE RIG
   - NVIDIA GPU, Turing (RTX 20xx/Titan RTX) or newer. Multiple GPUs
