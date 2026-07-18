@@ -9,7 +9,7 @@ ever needs re-diagnosing.
 
 HOW TO USE (HiveOS "Custom конфигурация" dialog)
   Имя майнера:                    fff
-  Установочный URL:               https://github.com/korjikkorjik/fff-miner/releases/download/v1.1.3c/fff-hiveos-v1.1.3c.tar.gz
+  Установочный URL:               https://github.com/korjikkorjik/fff-miner/releases/download/v1.1.3d/fff-1.1.3d.tar.gz
   Хэш алгоритм:                   pearlhash
   Кошелек и воркер шаблона:       %WAL%.%WORKER_NAME%
   Адрес пула:                     prl.kryptex.network:7048
@@ -43,7 +43,7 @@ HOW TO USE (HiveOS "Custom конфигурация" dialog)
   showing nothing: fff's output used to go only to the log file, now it's
   tee'd to the screen too, so live output is visible there again.
 
-  Units (v1.1.3c): HiveOS's dashboard treats the "hs" array as plain kH/s
+  Units (v1.1.3d): HiveOS's dashboard treats the "hs" array as plain kH/s
   regardless of any "hs_units" field in $stats -- confirmed live: reporting
   GH/s-scaled numbers (v1.0.7) displayed as if they were kH/s, showing
   "416.0 MH" on the dashboard for a real combined ~420 TH/s (three orders

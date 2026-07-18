@@ -1,2 +1,2 @@
-8374e29dc5c21bc825cf6dcb3c4b9e24388c9f3bdfbaf78362cc155b50eefda6  fff-windows.zip
-7800f5c2daf494d0a4821856145a66eb08f43dd4d8fd17948ba5baac4f92d112  hiveos/fff-hiveos.tar.gz
+fd0934d3926863dc62c4f08a791a197d9c65de057c364d9bf356980cefdfcd98  fff-windows.zip
+b7418202a6391296ae3f738c53c4ae1e2ffda21485dd314e17574892cf96dbca  hiveos/fff-1.1.3d.tar.gz
