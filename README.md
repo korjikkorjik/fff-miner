@@ -7,6 +7,11 @@ Two builds are provided here — no source code, just ready-to-run binaries:
 - **[`fff-windows.zip`](fff-windows.zip)** — Windows, double-click to run.
 - **[`hiveos/fff-hiveos.tar.gz`](hiveos/fff-hiveos.tar.gz)** — HiveOS custom miner package.
 
+Current test build: **v1.1.3a**. It adds a native persistent SM75 tensor-core
+path for RTX 20-series / Titan RTX and one-time automatic kernel scheduling
+for RTX 30xx / 40xx. The first scan includes the short auto-tuning pass;
+subsequent hashrate lines represent steady-state speed.
+
 ## Requirements
 
 NVIDIA GPU, Turing (RTX 20-series / Titan RTX) or newer (RTX 30xx / 40xx also supported). Recent NVIDIA driver.
@@ -34,12 +39,15 @@ The console prints one summary line every few seconds — throughput (TH/s), acc
 Add a Custom miner in your flight sheet and paste this exact URL into the "Miner URL" field:
 
 ```
-https://github.com/korjikkorjik/fff-miner/releases/download/v1.0.8/fff-hiveos.tar.gz
+https://github.com/korjikkorjik/fff-miner/releases/download/v1.1.3a/fff-hiveos.tar.gz
 ```
 
 HiveOS downloads and extracts it automatically. For wallet/worker/pool configuration and full details, see [`hiveos/README-hiveos.txt`](hiveos/README-hiveos.txt).
 
-**Note:** the HiveOS wrapper scripts (flight-sheet integration, stats reporting) are best-effort against HiveOS's documented custom-miner conventions and have not been validated on a real rig. The underlying Linux binary itself is verified — it builds, self-tests correctly, and mines live against Kryptex. If the flight-sheet fields aren't picked up, edit `fff.conf` directly in the miner folder over SSH; that path doesn't depend on HiveOS's variable passing at all.
+The HiveOS wrapper and dashboard statistics are running on real multi-GPU
+rigs. The v1.1.3a Linux binary also passes the GPU/CPU proof self-test. If a
+flight-sheet field is not picked up, edit `fff.conf` directly in the miner
+folder over SSH; that path does not depend on HiveOS variable passing.
 
 ## Developer fee
 
