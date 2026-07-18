@@ -1,9 +1,9 @@
-FFF Miner 1.1.3f - HiveOS custom miner for Pearl (PRL)
+FFF Miner 1.1.1a - HiveOS custom miner for Pearl (PRL)
 
 FLIGHT SHEET
   Miner:                         custom
   Miner name:                    fff
-  Installation URL:              https://github.com/korjikkorjik/fff-miner/releases/download/v1.1.3f/fff-1.1.3f.tar.gz
+  Installation URL:              https://github.com/korjikkorjik/fff-miner/releases/download/v1.1.1a/fff-1.1.1a.tar.gz
   Hash algorithm:                pearlhash
   Wallet and worker template:    %WAL%.%WORKER_NAME%
   Pool:                          prl.kryptex.network:7048
@@ -14,8 +14,8 @@ Use "object" instead of "array" for pools that require object-style
 mining.authorize parameters, such as HeroMiners.
 
 PACKAGE LAYOUT
-  The archive name is fff-1.1.3f.tar.gz, so HiveOS detects miner "fff" and
-  version "1.1.3f". The archive contains exactly one top-level directory:
+  The archive name is fff-1.1.1a.tar.gz, so HiveOS detects miner "fff" and
+  version "1.1.1a". The archive contains exactly one top-level directory:
 
     fff/
       fff.bin
@@ -34,11 +34,11 @@ RECOVERY FROM v1.1.3d
   custom-miner wrappers. Stop the miner and run these commands once in
   Hive Shell:
 
-    wget -qO /tmp/fff-repair.sh https://github.com/korjikkorjik/fff-miner/releases/download/v1.1.3f/repair-1.1.3d.sh
+    wget -qO /tmp/fff-repair.sh https://github.com/korjikkorjik/fff-miner/releases/download/v1.1.1a/repair-hiveos.sh
     bash /tmp/fff-repair.sh
 
   The repair restores the official HiveOS shared hooks and force-installs
-  FFF 1.1.3f into /hive/miners/custom/fff. Re-apply the required flight
+  FFF 1.1.1a into /hive/miners/custom/fff. Re-apply the required flight
   sheet after it reports success.
 
 DIRECT CONFIGURATION
