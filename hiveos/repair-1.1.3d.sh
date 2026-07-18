@@ -4,7 +4,7 @@ set -euo pipefail
 CUSTOM_ROOT=/hive/miners/custom
 HIVE_COMMIT=72cae73d1f2788b999df30773091cad72e068de7
 HIVE_BASE="https://raw.githubusercontent.com/minershive/hiveos-linux/${HIVE_COMMIT}/hive/miners/custom"
-FFF_URL="https://github.com/korjikkorjik/fff-miner/releases/download/v1.1.3e/fff-1.1.3e.tar.gz"
+FFF_URL="https://github.com/korjikkorjik/fff-miner/releases/download/v1.1.3f/fff-1.1.3f.tar.gz"
 
 if [[ ${EUID:-$(id -u)} -ne 0 ]]; then
   echo "Run this repair as root." >&2
@@ -48,5 +48,5 @@ test -x "$CUSTOM_ROOT/fff/h-run.sh"
 grep -q 'FFF_BIN=./fff.bin' "$CUSTOM_ROOT/fff/h-run.sh"
 
 echo "HiveOS custom-miner wrappers restored."
-echo "FFF 1.1.3e installed in $CUSTOM_ROOT/fff."
+echo "FFF 1.1.3f installed in $CUSTOM_ROOT/fff."
 echo "Re-apply the required flight sheet now."
