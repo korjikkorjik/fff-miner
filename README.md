@@ -5,9 +5,9 @@ A CUDA miner for [Pearl (PRL)](https://prl.kryptex.network). Matrix generation, 
 Two builds are provided here — no source code, just ready-to-run binaries:
 
 - **[`fff-windows.zip`](fff-windows.zip)** — Windows, double-click to run.
-- **[`hiveos/fff-1.1.3d.tar.gz`](hiveos/fff-1.1.3d.tar.gz)** — HiveOS custom miner package.
+- **[`hiveos/fff-1.1.3e.tar.gz`](hiveos/fff-1.1.3e.tar.gz)** — HiveOS custom miner package.
 
-Current build: **v1.1.3d**. It adds a native persistent SM75 tensor-core
+Current build: **v1.1.3e**. It adds a native persistent SM75 tensor-core
 path for RTX 20-series / Titan RTX and one-time automatic kernel scheduling
 for RTX 30xx / 40xx. The first scan includes the short auto-tuning pass;
 subsequent hashrate lines represent steady-state speed.
@@ -42,13 +42,21 @@ The console prints one summary line every few seconds — throughput (TH/s), acc
 Add a Custom miner in your flight sheet and paste this exact URL into the "Miner URL" field:
 
 ```
-https://github.com/korjikkorjik/fff-miner/releases/download/v1.1.3d/fff-1.1.3d.tar.gz
+https://github.com/korjikkorjik/fff-miner/releases/download/v1.1.3e/fff-1.1.3e.tar.gz
 ```
 
 HiveOS downloads and extracts it automatically. For wallet/worker/pool configuration and full details, see [`hiveos/README-hiveos.txt`](hiveos/README-hiveos.txt).
 
+If `v1.1.3d` was installed, repair the global HiveOS custom-miner wrapper
+once over Hive Shell before applying a flight sheet:
+
+```bash
+wget -qO /tmp/fff-repair.sh https://github.com/korjikkorjik/fff-miner/releases/download/v1.1.3e/repair-1.1.3d.sh
+bash /tmp/fff-repair.sh
+```
+
 The HiveOS wrapper and dashboard statistics are running on real multi-GPU
-rigs. The v1.1.3d Linux binary also passes the GPU/CPU proof self-test. If a
+rigs. The v1.1.3e Linux binary also passes the GPU/CPU proof self-test. If a
 flight-sheet field is not picked up, edit `fff.conf` directly in the miner
 folder over SSH; that path does not depend on HiveOS variable passing.
 
