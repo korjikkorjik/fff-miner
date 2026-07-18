@@ -9,7 +9,7 @@ ever needs re-diagnosing.
 
 HOW TO USE (HiveOS "Custom конфигурация" dialog)
   Имя майнера:                    fff
-  Установочный URL:               https://github.com/korjikkorjik/fff-miner/releases/download/v1.1.3a/fff-hiveos.tar.gz
+  Установочный URL:               https://github.com/korjikkorjik/fff-miner/releases/download/v1.1.3a/fff-hiveos-v1.1.3a.tar.gz
   Хэш алгоритм:                   pearlhash
   Кошелек и воркер шаблона:       %WAL%.%WORKER_NAME%
   Адрес пула:                     prl.kryptex.network:7048
